@@ -16,6 +16,10 @@ class Auto:
         else:
             self.tamanhetkinen_nopeus = uusi_nopeus
 
+    def kulje(self, tunti):
+        uusi_matka = self.tamanhetkinen_nopeus * tunti
+        self.kuljettu_matka = uusi_matka
+
     def __str__(self) -> str:
         return (f'Rekisteritunnus: {self.rekisteritunnus},\n'
                 f'Huippunopeus: {self.huippunopeus} km/h,\n'
@@ -25,10 +29,11 @@ class Auto:
     
 if __name__ == "__main__":
     Auto = Auto("ABC-123", 142)
-    speeds = [30, 70, 50]
+    speedsAndTimes = [(30, 1.5), (70, 2.5), (50, 3.5)]
     
-    for i in speeds:
-        Auto.kiihdytä(i)
+    for i in speedsAndTimes:
+        Auto.kiihdytä(i[0])
+        Auto.kulje(i[1])
         print(f"\n{Auto}")
 
     Auto.kiihdytä(-200)

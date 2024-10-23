@@ -1,5 +1,5 @@
 
-class auto:
+class Auto:
     def __init__(self, rekisteritunnus, huippunopeus):
         self.rekisteritunnus = rekisteritunnus
         self.huippunopeus = huippunopeus
@@ -13,5 +13,5 @@ class auto:
                 f'Kuljettu matka: {self.kuljettu_matka} km')
     
 if __name__ == "__main__":
-    auto = auto("ABC-123", 142)
-    print(auto)
+    Auto = Auto("ABC-123", 142)
+    print(f"\n{Auto}")
